@@ -1,0 +1,37 @@
+{% block content %}
+{% load static %}
+<body>
+  <h2>Pokedex</h2>
+  <form method="post">
+    {% csrf_token %}
+
+    <input type="text" name="pokemon" placeholder="Search Pokemon">
+    <button type="submit">Search</button>
+  </form>
+  <div>
+    {% if number and name %}
+      <h3>
+        Number: {{number}}
+      </h3>
+      <h3>
+        Name: {{name}}
+      </h3>
+      <h3>
+        Height: {{height}}
+      </h3>
+      <h3>
+        Weight: {{weight}}
+      </h3>
+      <h3>
+        Default sprite:
+      </h3>
+      <img src="{{sprite}}" alt="{{name}} sprite" style="width: 70px">
+    {% else %}
+      <h3>
+        Escreva certo
+      </h3>
+    {% endif %}
+  </div>
+</body>
+
+{% endblock %}
