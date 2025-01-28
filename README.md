@@ -1,1 +1,1 @@
-## Simple Pokedex project using Django
+## Simple Pokedex Projet Unig Django
